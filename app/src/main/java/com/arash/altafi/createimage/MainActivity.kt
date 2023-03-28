@@ -57,20 +57,32 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            btnShare.setOnClickListener {
-//                shareTextWithImage(packageName, bitmap, "body", "title", "subject")
-//                shareTextWithVideo(
-//                    packageName,
-//                    "https://www.leader.ir/media/film/19/12/31912_364.mp4",
-//                    "body",
-//                    "title",
-//                    "subject"
-//                )
-                downloadAndShareVideo("https://www.leader.ir/media/film/19/12/31912_364.mp4")
+            btnShareImage.setOnClickListener {
+                shareTextWithImage(packageName, bitmap, "body", "title", "subject")
+            }
+
+            btnShareVideo.setOnClickListener {
+                shareTextWithVideo(
+                    packageName,
+                    "https://www.leader.ir/media/film/19/12/31912_364.mp4",
+                    "body",
+                    "title",
+                    "subject"
+                )
+
+//                downloadAndShareVideo("https://www.leader.ir/media/film/19/12/31912_364.mp4")
 
             }
 
-            btnSave.setOnClickListener {
+            btnShareFile.setOnClickListener {
+
+            }
+
+            btnDownloadAndInstallApk.setOnClickListener {
+
+            }
+
+            btnSaveImage.setOnClickListener {
 //                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //                    if (
 //                        ContextCompat.checkSelfPermission(this@MainActivity, WRITE_EXTERNAL_STORAGE)
@@ -96,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 //                        saveToInternalStorageAndroid10Above(this@MainActivity, bitmap)
 //                    else
 //                        saveToInternalStorage(this@MainActivity, bitmap)
-
+//
 //                }
             }
         }
