@@ -43,6 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/teal_200"
                     android:text="submit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -58,7 +59,7 @@
                 android:id="@+id/btnSaveImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="save image" />
 
             <com.google.android.material.button.MaterialButton
@@ -79,7 +80,7 @@
                 android:id="@+id/btnShareImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="Share Image" />
 
             <com.google.android.material.button.MaterialButton
