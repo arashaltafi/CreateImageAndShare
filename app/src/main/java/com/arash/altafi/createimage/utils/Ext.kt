@@ -74,7 +74,9 @@ fun Context.saveImageFromBitmapToCache(bitmap: Bitmap, imageName: String) {
     }
 }
 
-fun Context.saveImageFromBitmapToDownload(bitmap: Bitmap, imageName: String) {
+fun Context.saveImageFromBitmapToDownload(bitmap: Bitmap) {
+    // If there is already a file with the same name created by another app, the app will crash
+    val imageName = "${System.currentTimeMillis()}.jpg"
     val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
     val downloadFile = File(downloadDir, imageName)
 

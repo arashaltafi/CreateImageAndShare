@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                             Manifest.permission.READ_MEDIA_AUDIO
                         )
                     } else {
-                        saveImageFromBitmapToDownload(bitmap, "imageName.jpg")
+                        saveImageFromBitmapToDownload(bitmap)
                     }
                 } else {
                     if (!PermissionUtils.isGranted(
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                             )
                         }
                     } else {
-                        saveImageFromBitmapToDownload(bitmap, "imageName.jpg")
+                        saveImageFromBitmapToDownload(bitmap)
                     }
                 }
             }
