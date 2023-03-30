@@ -77,6 +77,13 @@ fun Context.saveImageFromBitmapToCache(bitmap: Bitmap, imageName: String) {
 fun Context.saveImageFromBitmapToDownload(bitmap: Bitmap, imageName: String) {
     val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
     val downloadFile = File(downloadDir, imageName)
+
+    //Check if exists, delete file
+    if (downloadFile.exists()) {
+        downloadFile.delete()
+    }
+
+    //SaveFile
     val downloadFileOutputStream = FileOutputStream(downloadFile)
     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, downloadFileOutputStream)
     downloadFileOutputStream.flush()
