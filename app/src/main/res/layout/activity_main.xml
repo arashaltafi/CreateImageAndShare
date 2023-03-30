@@ -56,67 +56,25 @@
                 android:text="go to second Activity" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSaveImage"
+                android:id="@+id/btnSaveImageToDownload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="save image" />
+                android:layout_marginTop="16dp"
+                android:text="save image to download" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSaveVideo"
+                android:id="@+id/btnSaveImageToCache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="save video" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSaveMusic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="save Music" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSaveFile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="save file" />
+                android:layout_marginTop="16dp"
+                android:text="save image to cache" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnShareImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Share Image" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnShareVideo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Share Video" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnShareMusic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Share Music" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnShareFile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Share File" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDownloadAndInstallApk"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Download And Install APK" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
