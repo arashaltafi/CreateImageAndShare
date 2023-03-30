@@ -1,8 +1,6 @@
 package com.arash.altafi.createimage
 
-import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.*
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
@@ -12,18 +10,15 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.provider.Settings
-import android.util.Log
 import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import com.arash.altafi.createimage.databinding.ActivityMainBinding
+import com.arash.altafi.createimage.utils.createUriFromBitmap
+import com.arash.altafi.createimage.utils.shareTextWithImage
+import com.arash.altafi.createimage.utils.shareTextWithVideo
 import java.io.File
 import java.io.FileOutputStream
-import java.io.IOException
 import java.io.OutputStream
 import java.util.*
 
@@ -57,74 +52,55 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            btnShareImage.setOnClickListener {
-                shareTextWithImage(packageName, bitmap, "body", "title", "subject")
-            }
-
-            btnShareVideo.setOnClickListener {
-                shareTextWithVideo(
-                    packageName,
-                    "https://www.leader.ir/media/film/19/12/31912_364.mp4",
-                    "body",
-                    "title",
-                    "subject"
-                )
-
-//                downloadAndShareVideo("https://www.leader.ir/media/film/19/12/31912_364.mp4")
-
-            }
-
-            btnShareFile.setOnClickListener {
-
-            }
-
-            btnDownloadAndInstallApk.setOnClickListener {
-
-            }
-
-            btnSaveImage.setOnClickListener {
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                    if (
-//                        ContextCompat.checkSelfPermission(this@MainActivity, WRITE_EXTERNAL_STORAGE)
-//                        != PackageManager.PERMISSION_GRANTED
-//                    ) {
-//                        requestPermissions(arrayOf(WRITE_EXTERNAL_STORAGE), 123)
-//                    } else {
-//                        saveImageToRoot(this@MainActivity, bitmap, "test")
-//                    }
-//                } else {
-//                    saveImageToRoot(this@MainActivity, bitmap, "test")
-//                }
-//                if (
-//                    ContextCompat.checkSelfPermission(this@MainActivity, WRITE_EXTERNAL_STORAGE)
-//                    != PackageManager.PERMISSION_GRANTED
-//                ) {
-//                    ActivityCompat.requestPermissions(
-//                        this@MainActivity,
-//                        arrayOf(WRITE_EXTERNAL_STORAGE), 123
-//                    )
-//                } else {
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-//                        saveToInternalStorageAndroid10Above(this@MainActivity, bitmap)
-//                    else
-//                        saveToInternalStorage(this@MainActivity, bitmap)
-//
-//                }
-            }
+            share(bitmap)
+            download()
         }
     }
 
-    private fun createUriFromBitmap(bitmap: Bitmap): Uri? {
-        val file = File(externalCacheDir, System.currentTimeMillis().toString() + ".jpg")
-        val out = FileOutputStream(file)
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out)
-        out.close()
-        return if (Build.VERSION.SDK_INT < 24) {
-            Uri.fromFile(file)
-        } else {
-            FileProvider.getUriForFile(
-                this@MainActivity, "$packageName.fileprovider", file
+    private fun share(bitmap: Bitmap) = binding.apply {
+        btnShareImage.setOnClickListener {
+            shareTextWithImage(packageName, bitmap, "body", "title", "subject")
+        }
+
+        btnShareVideo.setOnClickListener {
+            shareTextWithVideo(
+                packageName,
+                "https://www.leader.ir/media/film/19/12/31912_364.mp4",
+                "body",
+                "title",
+                "subject"
             )
+//                downloadAndShareVideo("https://www.leader.ir/media/film/19/12/31912_364.mp4")
+        }
+
+        btnShareMusic.setOnClickListener {
+
+        }
+
+        btnShareFile.setOnClickListener {
+
+        }
+    }
+
+    private fun download() = binding.apply {
+        btnDownloadAndInstallApk.setOnClickListener {
+
+        }
+
+        btnSaveImage.setOnClickListener {
+
+        }
+
+        btnSaveVideo.setOnClickListener {
+
+        }
+
+        btnSaveMusic.setOnClickListener {
+
+        }
+
+        btnSaveFile.setOnClickListener {
+
         }
     }
 

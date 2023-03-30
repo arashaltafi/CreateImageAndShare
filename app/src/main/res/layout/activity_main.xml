@@ -70,6 +70,13 @@
                 android:text="save video" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="save Music" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSaveFile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,6 +98,13 @@
                 android:text="Share Video" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShareMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Share Music" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnShareFile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,7 +115,7 @@
                 android:id="@+id/btnDownloadAndInstallApk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="Download And Install APK" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,4 +1,4 @@
-package com.arash.altafi.createimage
+package com.arash.altafi.createimage.utils
 
 import android.content.Intent
 import android.os.Build

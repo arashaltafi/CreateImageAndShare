@@ -1,4 +1,4 @@
-package com.arash.altafi.createimage
+package com.arash.altafi.createimage.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,6 +14,18 @@ import androidx.core.content.FileProvider
 import java.io.File
 import java.io.FileOutputStream
 import java.net.URL
+
+fun Context.createUriFromBitmap(bitmap: Bitmap): Uri? {
+    val file = File(externalCacheDir, System.currentTimeMillis().toString() + ".jpg")
+    val out = FileOutputStream(file)
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out)
+    out.close()
+    return if (Build.VERSION.SDK_INT < 24) {
+        Uri.fromFile(file)
+    } else {
+        FileProvider.getUriForFile(this, "$packageName.fileprovider", file)
+    }
+}
 
 fun Context.shareTextWithImage(
     applicationId: String,
@@ -89,8 +101,6 @@ fun Activity.shareTextWithVideo(
         }
     }.start()
 }
-
-//////////////////////////////////////////////////////////////
 
 @SuppressLint("Range")
 fun Activity.downloadAndShareVideo(videoUrl: String) {
